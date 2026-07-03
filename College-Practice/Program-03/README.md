@@ -1,6 +1,6 @@
 # 🔍 Substring Occurrence Counter
 
-This program counts how many times a substring appears within a given string.
+This program counts how many times a substring appears within a given string. 
 
 ## 📚 Concepts Covered
 
