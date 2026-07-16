@@ -9,6 +9,7 @@ This folder contains my learning journey of **Object-Oriented Programming (OOP)*
 - ✅ Properties
 - ✅ Encapsulation
 - ✅ Indexers
+- ✅ Static Members
 - ⏳ Inheritance
 - ⏳ Polymorphism
 - ⏳ Method Overloading
@@ -25,15 +26,37 @@ This folder contains my learning journey of **Object-Oriented Programming (OOP)*
 ├── Encapsulation
 ├── Indexers
 ├── Properties
+├── Static-Members
+│   └── Customer-Management
 └── README.md
 ```
 
-## 🎯 Goal
+## 🎯 Learning Objectives
 
 - Understand the core principles of Object-Oriented Programming.
-- Learn how to design reusable and maintainable classes.
-- Build a strong foundation for Windows Forms and .NET application development.
+- Learn constructors, properties, encapsulation, indexers, and static members.
+- Write clean, reusable, and maintainable C# code.
+- Build a strong foundation for **Windows Forms**, **ADO.NET**, and **ASP.NET** development.
+
+## 🚀 Learning Progress
+
+| Topic | Status |
+|-------|:------:|
+| Classes & Objects | ✅ |
+| Constructors | ✅ |
+| Properties | ✅ |
+| Encapsulation | ✅ |
+| Indexers | ✅ |
+| Static Members | ✅ |
+| Inheritance | ⏳ |
+| Polymorphism | ⏳ |
+| Method Overloading | ⏳ |
+| Method Overriding | ⏳ |
+| Abstraction | ⏳ |
+| Interfaces | ⏳ |
 
 ---
 
 👨‍💻 **Akash Raval**
+
+**BCA Student • C# & .NET Learner • Python Developer • Flask Developer • Future AI-Powered Developer**
