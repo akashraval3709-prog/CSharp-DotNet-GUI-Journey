@@ -52,11 +52,7 @@ Selected Hobbies Displayed in ListBox
 ## 📂 Project Structure
 
 ```text
-04-Windows-Forms
-│
-└── CheckBox
-    │
-    └── Hobby-Selector
+        Program-17
         ├── Program.cs
         ├── Form1.cs
         ├── Form1.Designer.cs
