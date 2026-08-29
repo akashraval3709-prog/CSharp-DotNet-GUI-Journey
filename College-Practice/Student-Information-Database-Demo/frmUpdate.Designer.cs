@@ -1,0 +1,209 @@
+﻿namespace DBDemo
+{
+    partial class frmUpdate
+    {
+        /// <summary>
+        /// Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Windows Form Designer generated code
+
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmUpdate));
+            panel2 = new Panel();
+            btnClear = new Button();
+            btnSave = new Button();
+            rdoFemale = new RadioButton();
+            rdoMale = new RadioButton();
+            label4 = new Label();
+            txtCity = new TextBox();
+            txtRollNo = new TextBox();
+            txtName = new TextBox();
+            label3 = new Label();
+            label2 = new Label();
+            label1 = new Label();
+            panel2.SuspendLayout();
+            SuspendLayout();
+            // 
+            // panel2
+            // 
+            panel2.Controls.Add(btnClear);
+            panel2.Controls.Add(btnSave);
+            panel2.Controls.Add(rdoFemale);
+            panel2.Controls.Add(rdoMale);
+            panel2.Controls.Add(label4);
+            panel2.Controls.Add(txtCity);
+            panel2.Controls.Add(txtRollNo);
+            panel2.Controls.Add(txtName);
+            panel2.Controls.Add(label3);
+            panel2.Controls.Add(label2);
+            panel2.Controls.Add(label1);
+            panel2.Location = new Point(174, 12);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(453, 426);
+            panel2.TabIndex = 1;
+            // 
+            // btnClear
+            // 
+            btnClear.BackColor = SystemColors.HotTrack;
+            btnClear.Font = new Font("Segoe UI Black", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnClear.ForeColor = Color.White;
+            btnClear.Location = new Point(218, 339);
+            btnClear.Name = "btnClear";
+            btnClear.Size = new Size(86, 42);
+            btnClear.TabIndex = 6;
+            btnClear.Text = "Clear";
+            btnClear.UseVisualStyleBackColor = false;
+            btnClear.Click += btnClear_Click;
+            // 
+            // btnSave
+            // 
+            btnSave.BackColor = SystemColors.HotTrack;
+            btnSave.Font = new Font("Segoe UI Black", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnSave.ForeColor = Color.White;
+            btnSave.Location = new Point(110, 339);
+            btnSave.Name = "btnSave";
+            btnSave.Size = new Size(93, 42);
+            btnSave.TabIndex = 5;
+            btnSave.Text = "  Save";
+            btnSave.UseVisualStyleBackColor = false;
+            btnSave.Click += btnSave_Click;
+            // 
+            // rdoFemale
+            // 
+            rdoFemale.AutoSize = true;
+            rdoFemale.Font = new Font("Segoe UI", 9.6F, FontStyle.Bold);
+            rdoFemale.Location = new Point(234, 204);
+            rdoFemale.Name = "rdoFemale";
+            rdoFemale.Size = new Size(86, 25);
+            rdoFemale.TabIndex = 3;
+            rdoFemale.TabStop = true;
+            rdoFemale.Text = "Female";
+            rdoFemale.UseVisualStyleBackColor = true;
+            // 
+            // rdoMale
+            // 
+            rdoMale.AutoSize = true;
+            rdoMale.Font = new Font("Segoe UI", 9.6F, FontStyle.Bold);
+            rdoMale.Location = new Point(157, 205);
+            rdoMale.Name = "rdoMale";
+            rdoMale.Size = new Size(69, 25);
+            rdoMale.TabIndex = 2;
+            rdoMale.TabStop = true;
+            rdoMale.Text = "Male";
+            rdoMale.UseVisualStyleBackColor = true;
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Font = new Font("Cambria", 10.2F, FontStyle.Bold);
+            label4.Location = new Point(72, 205);
+            label4.Name = "label4";
+            label4.Size = new Size(79, 20);
+            label4.TabIndex = 3;
+            label4.Text = "Gender  :";
+            // 
+            // txtCity
+            // 
+            txtCity.BorderStyle = BorderStyle.FixedSingle;
+            txtCity.Location = new Point(151, 259);
+            txtCity.Name = "txtCity";
+            txtCity.Size = new Size(125, 27);
+            txtCity.TabIndex = 4;
+            // 
+            // txtRollNo
+            // 
+            txtRollNo.BorderStyle = BorderStyle.FixedSingle;
+            txtRollNo.Location = new Point(151, 87);
+            txtRollNo.Name = "txtRollNo";
+            txtRollNo.Size = new Size(125, 27);
+            txtRollNo.TabIndex = 0;
+            // 
+            // txtName
+            // 
+            txtName.BorderStyle = BorderStyle.FixedSingle;
+            txtName.Location = new Point(151, 146);
+            txtName.Name = "txtName";
+            txtName.Size = new Size(125, 27);
+            txtName.TabIndex = 1;
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Font = new Font("Cambria", 10.2F, FontStyle.Bold);
+            label3.Location = new Point(95, 259);
+            label3.Name = "label3";
+            label3.Size = new Size(48, 20);
+            label3.TabIndex = 2;
+            label3.Text = "City :";
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new Font("Cambria", 10.2F, FontStyle.Bold);
+            label2.Location = new Point(88, 149);
+            label2.Name = "label2";
+            label2.Size = new Size(63, 20);
+            label2.TabIndex = 1;
+            label2.Text = "Name :";
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Cambria", 10.2F, FontStyle.Bold);
+            label1.Location = new Point(80, 87);
+            label1.Name = "label1";
+            label1.Size = new Size(71, 20);
+            label1.TabIndex = 0;
+            label1.Text = "RollNo :";
+            // 
+            // frmUpdate
+            // 
+            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(800, 450);
+            Controls.Add(panel2);
+            Icon = (Icon)resources.GetObject("$this.Icon");
+            Name = "frmUpdate";
+            Text = "Student Update Form";
+            Load += frmUpdate_Load;
+            panel2.ResumeLayout(false);
+            panel2.PerformLayout();
+            ResumeLayout(false);
+        }
+
+        #endregion
+
+        private Panel panel2;
+        private Button btnClear;
+        private Button btnSave;
+        private RadioButton rdoFemale;
+        private RadioButton rdoMale;
+        private Label label4;
+        private TextBox txtCity;
+        private TextBox txtRollNo;
+        private TextBox txtName;
+        private Label label3;
+        private Label label2;
+        private Label label1;
+    }
+}
