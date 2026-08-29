@@ -1,4 +1,4 @@
-﻿namespace DBDemo
+namespace DBDemo
 {
     partial class Form1
     {
@@ -28,9 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             panel1 = new Panel();
-            btnUpdate = new Button();
-            btnDelete = new Button();
             label5 = new Label();
             dgvData = new DataGridView();
             panel2 = new Panel();
@@ -45,6 +44,7 @@
             label3 = new Label();
             label2 = new Label();
             label1 = new Label();
+            label6 = new Label();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvData).BeginInit();
             panel2.SuspendLayout();
@@ -52,51 +52,23 @@
             // 
             // panel1
             // 
-            panel1.Controls.Add(btnUpdate);
-            panel1.Controls.Add(btnDelete);
             panel1.Controls.Add(label5);
             panel1.Controls.Add(dgvData);
-            panel1.Location = new Point(471, 12);
+            panel1.Location = new Point(407, 74);
             panel1.Name = "panel1";
-            panel1.Size = new Size(749, 426);
+            panel1.Size = new Size(813, 426);
             panel1.TabIndex = 0;
-            // 
-            // btnUpdate
-            // 
-            btnUpdate.BackColor = SystemColors.HotTrack;
-            btnUpdate.Font = new Font("Segoe UI Black", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnUpdate.ForeColor = Color.White;
-            btnUpdate.Location = new Point(404, 365);
-            btnUpdate.Name = "btnUpdate";
-            btnUpdate.Size = new Size(125, 42);
-            btnUpdate.TabIndex = 8;
-            btnUpdate.Text = "Update";
-            btnUpdate.UseVisualStyleBackColor = false;
-            btnUpdate.Click += btnUpdate_Click;
-            // 
-            // btnDelete
-            // 
-            btnDelete.BackColor = SystemColors.HotTrack;
-            btnDelete.Font = new Font("Segoe UI Black", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnDelete.ForeColor = Color.White;
-            btnDelete.Location = new Point(228, 365);
-            btnDelete.Name = "btnDelete";
-            btnDelete.Size = new Size(125, 42);
-            btnDelete.TabIndex = 7;
-            btnDelete.Text = "Delete";
-            btnDelete.UseVisualStyleBackColor = false;
-            btnDelete.Click += btnDelete_Click;
             // 
             // label5
             // 
             label5.AutoSize = true;
             label5.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
             label5.ForeColor = SystemColors.HotTrack;
-            label5.Location = new Point(252, 4);
+            label5.Location = new Point(266, 4);
             label5.Name = "label5";
-            label5.Size = new Size(256, 28);
+            label5.Size = new Size(206, 28);
             label5.TabIndex = 1;
-            label5.Text = "Student Information Data";
+            label5.Text = "Student Records List";
             // 
             // dgvData
             // 
@@ -104,11 +76,13 @@
             dgvData.Location = new Point(15, 36);
             dgvData.Name = "dgvData";
             dgvData.RowHeadersWidth = 51;
-            dgvData.Size = new Size(719, 308);
+            dgvData.Size = new Size(784, 308);
             dgvData.TabIndex = 9;
+            dgvData.CellClick += dgvData_CellClick;
             // 
             // panel2
             // 
+            panel2.Controls.Add(label6);
             panel2.Controls.Add(btnClear);
             panel2.Controls.Add(btnAdd);
             panel2.Controls.Add(rdoFemale);
@@ -120,9 +94,9 @@
             panel2.Controls.Add(label3);
             panel2.Controls.Add(label2);
             panel2.Controls.Add(label1);
-            panel2.Location = new Point(12, 12);
+            panel2.Location = new Point(12, 74);
             panel2.Name = "panel2";
-            panel2.Size = new Size(453, 426);
+            panel2.Size = new Size(389, 426);
             panel2.TabIndex = 0;
             // 
             // btnClear
@@ -134,7 +108,7 @@
             btnClear.Name = "btnClear";
             btnClear.Size = new Size(86, 42);
             btnClear.TabIndex = 6;
-            btnClear.Text = "Clear";
+            btnClear.Text = "Cancel";
             btnClear.UseVisualStyleBackColor = false;
             btnClear.Click += btnClear_Click;
             // 
@@ -182,7 +156,7 @@
             label4.Location = new Point(72, 205);
             label4.Name = "label4";
             label4.Size = new Size(79, 20);
-            label4.TabIndex = 3;
+            label4.TabIndex = 2;
             label4.Text = "Gender  :";
             // 
             // txtCity
@@ -216,14 +190,14 @@
             label3.Location = new Point(95, 259);
             label3.Name = "label3";
             label3.Size = new Size(48, 20);
-            label3.TabIndex = 2;
+            label3.TabIndex = 3;
             label3.Text = "City :";
             // 
             // label2
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Cambria", 10.2F, FontStyle.Bold);
-            label2.Location = new Point(88, 149);
+            label2.Location = new Point(87, 150);
             label2.Name = "label2";
             label2.Size = new Size(63, 20);
             label2.TabIndex = 1;
@@ -233,23 +207,35 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Cambria", 10.2F, FontStyle.Bold);
-            label1.Location = new Point(80, 87);
+            label1.Location = new Point(74, 90);
             label1.Name = "label1";
-            label1.Size = new Size(71, 20);
+            label1.Size = new Size(75, 20);
             label1.TabIndex = 0;
-            label1.Text = "RollNo :";
+            label1.Text = "Roll No :";
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            label6.ForeColor = SystemColors.HotTrack;
+            label6.Location = new Point(98, 4);
+            label6.Name = "label6";
+            label6.Size = new Size(192, 28);
+            label6.TabIndex = 7;
+            label6.Text = "New Student Entry";
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1232, 450);
+            ClientSize = new Size(1232, 629);
             Controls.Add(panel2);
             Controls.Add(panel1);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             MaximizeBox = false;
             Name = "Form1";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "Student Information Data";
+            Text = "Student Registration & Records";
             Load += Form1_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
@@ -275,8 +261,7 @@
         private Button btnAdd;
         private DataGridView dgvData;
         private Label label5;
-        private Button btnUpdate;
-        private Button btnDelete;
         private Button btnClear;
+        private Label label6;
     }
 }
