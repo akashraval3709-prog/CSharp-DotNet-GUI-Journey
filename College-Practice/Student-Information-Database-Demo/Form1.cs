@@ -56,40 +56,7 @@ namespace DBDemo
             }
         }
 
-        private void updateData(string query)
-        {
-        
-            try
-            {
-                SqlCommand cmd = new SqlCommand(query, conn);
-                cmd.Parameters.AddWithValue("@RollNo", RollNo);
-                cmd.Parameters.AddWithValue("@Name", Name);
-                cmd.Parameters.AddWithValue("@Gender", Gender);
-                cmd.Parameters.AddWithValue("@City", City);
-                conn.Open();
-                int rowsAffected = cmd.ExecuteNonQuery();
-                conn.Close();
 
-                if (rowsAffected > 0)
-                {
-                    MessageBox.Show("Record Updated Successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    LoadGrid(); 
-                }
-                else
-                {
-                    MessageBox.Show("Record not found with this Roll No!", "Not Found", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("ERROR : " + ex.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            finally
-            {
-                conn.Close();
-            }
-        
-        }
 
 
         private void deleteData(string query)
@@ -103,6 +70,7 @@ namespace DBDemo
                     conn.Open();
                     cmd.ExecuteNonQuery();
                 }
+
 
 
             }
@@ -119,26 +87,24 @@ namespace DBDemo
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            if (txtRollNo.Text.Trim() != "")
+            if (txtRollNo.Text.Trim() != "" || txtName.Text.Trim() != "" || txtCity.Text.Trim() != "")
             {
                 RollNo = int.Parse(txtRollNo.Text);
-              
-
-            }
-            else
-            {
-
-            }
-
-            if (txtName.Text.Trim() != "")
-            {
                 Name = txtName.Text;
+                City = txtCity.Text;
+
 
             }
             else
             {
 
+
             }
+
+
+
+
+
 
             if (rdoMale.Checked)
             {
@@ -149,23 +115,8 @@ namespace DBDemo
 
             }
 
-            if (rdoFemale.Checked)
-            {
-                Gender = rdoFemale.Text;
-            }
-            else
-            {
+            Gender = rdoMale.Checked ? "Male" : "Female";
 
-            }
-            if (txtCity.Text.Trim() != "")
-            {
-                City = txtCity.Text;
-
-            }
-            else
-            {
-
-            }
 
 
             string query = $"INSERT INTO tblStudent (RollNo, Name, Gender, City) VALUES(@RollNo,@Name,@Gender,@City)";
@@ -184,105 +135,18 @@ namespace DBDemo
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            int roll = int.Parse(dgvData.SelectedRows[0].Cells[0].Value.ToString());
 
-            string query = "DELETE FROM tblStudent WHERE RollNo =" + roll;
-            deleteData(query);
-            LoadGrid();
 
 
         }
+
+
+
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            try
-            {
 
-           
-                txtRollNo.Text = dgvData.SelectedRows[0].Cells[0].Value.ToString();
-                txtRollNo.Enabled = false;
-                txtName.Text = dgvData.SelectedRows[0].Cells[1].Value.ToString();
-                String gen = dgvData.SelectedRows[0].Cells[2].Value.ToString();
-                if (gen == "Male")
-                {
-                    rdoMale.Checked = true;
-                }
-                else
-                {
-                    rdoFemale.Checked = true;
-                }
-                txtCity.Text = dgvData.SelectedRows[0].Cells[3].Value.ToString();
-                if (txtRollNo.Text.Trim() != "")
-                {
-                    RollNo = int.Parse(txtRollNo.Text);
-
-
-                }
-                else
-                {
-
-                }
-
-                if (txtName.Text.Trim() != "")
-                {
-                    Name = txtName.Text;
-
-                }
-                else
-                {
-
-                }
-
-                if (rdoMale.Checked)
-                {
-                    Gender = rdoMale.Text;
-                }
-                else
-                {
-
-                }
-
-                if (rdoFemale.Checked)
-                {
-                    Gender = rdoFemale.Text;
-                }
-                else
-                {
-
-                }
-                if (txtCity.Text.Trim() != "")
-                {
-                    City = txtCity.Text;
-
-                }
-                else
-                {
-           
-                }
-
-
-                string query = "UPDATE tblStudent SET Name = @Name, Gender = @Gender, City = @City WHERE RollNo = @RollNo";
-                setData(query);
-                txtRollNo.Text = "";
-                txtName.Text = "";
-                txtCity.Text = "";
-                rdoMale.Checked = false;
-                rdoFemale.Checked = false;
-                txtRollNo.Focus();
-                LoadGrid();
-
-
-
-
-
-
-            }
-            catch
-            {
-                MessageBox.Show("ERROR : Select any one row", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
         }
-
         private void btnClear_Click(object sender, EventArgs e)
         {
             txtRollNo.Text = "";
@@ -293,6 +157,64 @@ namespace DBDemo
             txtRollNo.Focus();
 
         }
+
+        private void dgvData_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+
+
+            if (e.ColumnIndex.ToString() == "5")
+            {
+
+                try
+                {
+
+
+
+
+                    int roll = int.Parse(dgvData.Rows[e.RowIndex].Cells[0].Value.ToString());
+
+                    string query = "DELETE FROM tblStudent WHERE RollNo =" + roll;
+                    deleteData(query);
+                    LoadGrid();
+                    /* }
+                     else
+                     {
+                         MessageBox.Show("Select any one row", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                     }*/
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("ERROR : " + ex.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+
+
+            }
+
+            if (e.ColumnIndex.ToString() == "6")
+            {
+                try
+                {
+
+                    int roll = int.Parse(dgvData.Rows[e.RowIndex].Cells[0].Value.ToString());
+                    string name = dgvData.Rows[e.RowIndex].Cells[1].Value.ToString();
+                    string gender = dgvData.Rows[e.RowIndex].Cells[2].Value.ToString();
+                    string city = dgvData.Rows[e.RowIndex].Cells[3].Value.ToString();
+
+                    frmUpdate updateForm = new frmUpdate(roll, name, gender, city);
+                    updateForm.ShowDialog();
+
+
+                    LoadGrid();
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("ERROR : " + ex.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+
+            }
+
+        }
     }
 }
-
